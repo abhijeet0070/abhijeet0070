@@ -1,1 +1,17 @@
+ `Cat_Vs_Dog_Classification.ipynb` notebook:
+
+| **Step**              | **Description**                                                                                                     | **Explanation**                                                                                                  |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| **1. Import Libraries** | Load required libraries like TensorFlow, Keras, OpenCV, and Matplotlib.                                             | These libraries are essential for building, training, and visualizing the CNN model and handling image data.     |
+| **2. Load Dataset**     | Load images of cats and dogs for training and testing.                                                              | Images are sourced either from a local directory or an external dataset like Kaggle's Cat vs Dog dataset.        |
+| **3. Preprocess Data**  | Resize images, normalize pixel values, and split into training and validation sets.                                 | Images are resized to a uniform size (e.g., \(256 \times 256\)), and pixel values are scaled to [0, 1] for better training efficiency. Training-validation split ensures proper model evaluation. |
+| **4. Build Model**      | Create a CNN architecture with convolutional layers, pooling, and dense layers.                                    | The CNN consists of layers like Conv2D (for feature extraction), MaxPooling (for dimensionality reduction), and Dense layers for classification. |
+| **5. Compile Model**    | Configure the model with the Adam optimizer and binary cross-entropy loss.                                          | The optimizer (Adam) adjusts the weights to minimize the loss function (binary cross-entropy) during training.    |
+| **6. Train Model**      | Train the CNN on the training dataset and validate on the validation set.                                           | The model is trained for several epochs, during which it learns to differentiate between images of cats and dogs. |
+| **7. Evaluate Model**   | Test the trained model on unseen images and calculate accuracy.                                                     | The model's performance is evaluated on a separate test dataset to measure how well it generalizes.               |
+| **8. Visualize Results**| Display predictions and compare them with actual labels using test images.                                          | Test image predictions are displayed alongside their actual labels to visually assess the model’s accuracy.       |
+| **9. Save Model**       | Save the trained model for future use.                                                                             | The model is saved as a file (e.g., `.h5` or `.pb`) to avoid retraining for later predictions.                    |
+| **10. Predict**         | Load custom images, preprocess them, and predict whether they are cats or dogs.                                    | The trained model is used to make predictions on new, unseen images by preprocessing them in the same way as the training images. |
+
+This detailed table provides a step-by-step explanation of the workflow while keeping it concise. Let me know if you’d like further clarification!
 
