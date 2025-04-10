@@ -15,10 +15,10 @@ jobs:
           fetch-depth: 0
           lfs: true
       - name: Pull latest changes from remote
-        run: git pull https://abhipisal1998:$HF_TOKEN@huggingface.co/spaces/abhipisal1998/Search_Engine_llm main
+        run: git pull https://huggingface.co/spaces/abhipisal1998/Search_Engine_llm main
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
       - name: Push to hub
-        run: git push https://abhipisal1998:$HF_TOKEN@huggingface.co/spaces/abhipisal1998/Search_Engine_llm main
+        run: git push https://huggingface.co/spaces/abhipisal1998/Search_Engine_llm main
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
