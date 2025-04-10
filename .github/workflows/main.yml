@@ -10,26 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Required for full history (needed for pull --rebase)
-          lfs: true       # If you're using Git LFS
+          fetch-depth: 0  # Needed for full history (required for rebase)
+          lfs: true       # Optional: only if you're using LFS
 
       - name: Set up Git identity
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
 
-      - name: Pull & Push to Hugging Face Hub
+      - name: Pull and Push to Hugging Face hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
           # Add Hugging Face remote with authentication
           git remote add hf https://abhipisal1998:$HF_TOKEN@huggingface.co/spaces/abhipisal1998/Search_Engine_llm
 
-          # Pull changes from Hugging Face main with rebase to avoid conflicts
+          # Pull with rebase to avoid push rejection
           git pull hf main --rebase
 
-          # Now push local main branch to Hugging Face
+          # Push to Hugging Face
           git push hf main
